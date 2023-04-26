@@ -1,0 +1,52 @@
+body {
+  
+    font-family: "Helvetica Neue", Helvetica, Arial;
+    padding-top: 20px;
+}
+.container {
+    width: 406px;
+    max-width: 406px;
+    margin: 0 auto;
+}
+#signup {
+    padding: 0px 25px 25px;
+    background: #fff;
+    box-shadow: 
+        0px 0px 0px 5px rgba( 255,255,255,0.4 ), 
+        0px 4px 20px rgba( 0,0,0,0.33 );
+    
+    display: table;
+    position: static;
+}
+#signup .header {
+    margin-bottom: 0px;
+}
+
+#signup .header h3 {
+    color: #333333;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#signup .sep {
+    height: 1px;
+    background: #520909;
+    width: 406px;
+    margin: 20px 0px;
+}
+
+#signup .inputs input[type=email], input[type=number] , 
+input[type=text], select
+{
+    background: #f5f5f5;
+    font-size: 0.8rem;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    padding: 8px 8px;
+    width: 200px;
+    margin-bottom: 20px;
+    
+}
+
