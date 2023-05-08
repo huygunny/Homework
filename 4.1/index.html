@@ -1,19 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html>
+  <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>HTML: HyperText Markup Language</h1>
-    <p>Tim Berners-Lee invented the first browser at CERN, to enable researchers to share their research with eachother.</p>
-    <a target="_blank" href="http://home.web.cern.ch/topics/birth-web">Read more about the history of HTML
-        <p>
-        <img src="https://www.kasandbox.org/programming-images/misc/tim-berners-lee-webpage.png" width="300">
-        <br/>Image courtesy CERN   
-        </p>           
-</a>
+    <title>Tính điểm thi Đại học</title>
+    <style>
+      label {
+        display: inline-block;
+        width: 120px;
+      }
+      input[type="number"] {
+        width: 60px;
+      }
+      select {
+        width: 120px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Tính điểm thi Đại học</h1>
+    <form>
+      <label for="diem-toan">Điểm Toán:</label>
+      <input type="number" id="diem-toan" step="1" min="0" max="10"><br>
+
+      <label for="diem-van">Điểm Văn:</label>
+      <input type="number" id="diem-van" step="1" min="0" max="10"><br>
+
+      <label for="diem-anh">Điểm Anh:</label>
+      <input type="number" id="diem-anh" step="1" min="0" max="10"><br>
+
+      <label for="khu-vuc">Khu vực:</label>
+      <select id="khu-vuc">
+        <option value="kv1">KV1</option>
+        <option value="kv2nt">KV2-NT</option>
+        <option value="kv2">KV2</option>
+        <option value="kv3">KV3</option>
+      </select><br>
+
+      <button type="button" onclick="tinhDiem()">Tính điểm</button><br>
+
+      <label for="tong-diem">Tổng điểm:</label>
+      <input type="number" id="tong-diem" disabled>
+    </form>
+
+    <script>
+      function tinhDiem() {
+        // Lấy giá trị đầu vào
+        var diemToan = parseFloat(document.getElementById("diem-toan").value);
+        var diemVan = parseFloat(document.getElementById("diem-van").value);
+        var diemAnh = parseFloat(document.getElementById("diem-anh").value);
+        var khuVuc = document.getElementById("khu-vuc").value;
+
+        // Tính điểm khu vực
+        var diemKhuVuc = 0;
+        switch (khuVuc) {
+          case "kv1":
+            diemKhuVuc = 0.75;
+            break;
+          case "kv2nt":
+            diemKhuVuc = 0.5;
+            break;
+          case "kv2":
+            diemKhuVuc = 0.25;
+            break;
+          default:
+            diemKhuVuc = 0;
+            break;
+        }
+
+        // Tính tổng điểm
+        var tongDiem = diemToan + diemVan + diemAnh + diemKhuVuc;
+
+        // Hiển thị kết quả tính toán
+        document.getElementById("tong-diem").value =
+
+        tongDiem.toFixed(2);
+
+        alert("tong diem khoi D là:" +(diemToan + diemVan + diemAnh + diemKhuVuc));
+  }
+</script>
 </body>
 </html>
