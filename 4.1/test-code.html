@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button type="button" onclick="doanso()">Play</button>
+
+    <script>
+     const button = document.querySelector('button');
+
+button.addEventListener('click', playGame);
+
+function playGame() {
+  const maxNumber = parseInt(prompt('Nhập vào số lớn nhất mà bạn muốn đoán:'));
+  if (!Number.isInteger(maxNumber) || maxNumber < 1) {
+    alert('Số lớn nhất phải là một số nguyên dương.');
+    return;
+  }
+  
+  const randomNumber = Math.floor(Math.random() * maxNumber) + 1;
+  let guessCount = 0;
+  
+  do {
+    const guess = parseInt(prompt('Bạn đoán số nào?'));
+    if (!Number.isInteger(guess) || guess < 1 || guess > maxNumber) {
+      alert(`Giá trị không hợp lệ. Vui lòng nhập một số nguyên từ 1 đến ${maxNumber}.`);
+      break;
+    }
+    
+    guessCount++;
+    
+    if (guess === randomNumber) {
+      alert(`Chúc mừng, bạn đã đoán đúng số ${randomNumber} sau ${guessCount} lần đoán.`);
+      break;
+    } else if (guess < randomNumber) {
+      alert('Số bạn đoán nhỏ hơn số cần tìm. Hãy đoán lại.');
+    } else {
+      alert('Số bạn đoán lớn hơn số cần tìm. Hãy đoán lại.');
+    }
+    
+    if (guessCount === 3) {
+      alert(`Bạn đã đoán quá 3 lần mà không đúng số. Số cần tìm là ${randomNumber}.`);
+      break;
+    }
+  } while (true);
+}
+    </script>
+</body>
+
+</html>

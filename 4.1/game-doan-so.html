@@ -25,38 +25,30 @@ function playGame() {
   
   let maxNumber = prompt("Nhập vào số lớn nhất mà bạn muốn đoán:");
   
- 
   maxNumber = parseInt(maxNumber);
 
-  
   if (!Number.isInteger(maxNumber) || maxNumber <= 0) {
     alert("Số lớn nhất không hợp lệ, vui lòng nhập lại!");
     return;
   }
 
-  
   const randomNumber = Math.floor(Math.random() * maxNumber) + 1;
 
   
   let guessCount = 0;
 
- 
   do {
     
     let userGuess = prompt(`Lượt đoán thứ ${guessCount + 1}: Nhập vào một số từ 1 đến ${maxNumber}:`);
-    
-    
+       
     userGuess = parseInt(userGuess);
-
-   
+  
     if (!Number.isInteger(userGuess) || userGuess <= 0 || userGuess > maxNumber) {
       alert(`Số đoán không hợp lệ, vui lòng nhập lại!`);
       continue;
     }
-
-    
+   
     guessCount++;
-
     
     if (userGuess === randomNumber) {
       alert(`Chúc mừng bạn đã đoán đúng số!`);
