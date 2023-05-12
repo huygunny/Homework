@@ -16,20 +16,19 @@
 </body>
     
     <script>
-        // Lấy button chơi từ DOM
+        
 const playBtn = document.querySelector("#play");
 
-// Lắng nghe sự kiện click của button chơi
 playBtn.addEventListener("click", playGame);
 
 function playGame() {
-  // Lấy số lớn nhất mà người dùng nhập vào
+  
   let maxNumber = prompt("Nhập vào số lớn nhất mà bạn muốn đoán:");
   
-  // Chuyển đổi kiểu dữ liệu của maxNumber từ string sang number
+ 
   maxNumber = parseInt(maxNumber);
 
-  // Kiểm tra xem maxNumber có phải là một số hợp lệ hay không
+  
   if (!Number.isInteger(maxNumber) || maxNumber <= 0) {
     alert("Số lớn nhất không hợp lệ, vui lòng nhập lại!");
     return;
