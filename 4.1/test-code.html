@@ -18,10 +18,6 @@ button.addEventListener('click', playGame);
 
 function playGame() {
   const maxNumber = parseInt(prompt('Nhập vào số lớn nhất mà bạn muốn đoán:'));
-  if (!Number.isInteger(maxNumber) || maxNumber < 1) {
-    alert('Số lớn nhất phải là một số nguyên dương.');
-    return;
-  }
   
   const randomNumber = Math.floor(Math.random() * maxNumber) + 1;
   let guessCount = 0;
