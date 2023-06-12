@@ -1,14 +1,3 @@
-let a=5;
-let b=6;
+confirm("ban muon an com khong");
 
-let c=a+b;
-
-if (c ==11) {
-    console.log ("right answer");
-     if (c!= 11){
-        console.log("wrong answer");
-    }
-    else{
-        console.log ("error");
-    }
-}
+doc

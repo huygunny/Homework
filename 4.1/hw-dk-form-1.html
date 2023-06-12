@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input[type="text"], input[type="email"] {
+            width: 250px;
+            padding: 5px;
+        }
+
+        input[type="submit"], input[type="reset"] {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <form id="myForm">
+        <label for="yourname">Họ và tên:</label>
+        <input type="text" id="yourname" name="yourname" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label>Sở thích:</label>
+        <label for="hobby1"><input type="checkbox" id="hobby1" name="hobby" value="Hobby 1"> Hobby 1</label>
+        <label for="hobby2"><input type="checkbox" id="hobby2" name="hobby" value="Hobby 2"> Hobby 2</label>
+        <label for="hobby3"><input type="checkbox" id="hobby3" name="hobby" value="Hobby 3"> Hobby 3</label>
+
+        <input type="submit" value="Gửi thông tin">
+        <input type="reset" value="Nhập lại">
+    </form>
+
+    <script>
+        document.getElementById("myForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var yourname = document.getElementById("yourname").value;
+            var email = document.getElementById("email").value;
+            var hobbies = document.getElementsByName("hobby");
+            var selectedHobbies = [];
+            for (var i = 0; i < hobbies.length; i++) {
+                if (hobbies[i].checked) {
+                    selectedHobbies.push(hobbies[i].value);
+                }
+            }
+            console.log("Họ và tên: " + yourname);
+            console.log("Email: " + email);
+            console.log("Sở thích: " + selectedHobbies.join(", "));
+            // Gửi dữ liệu đi hoặc thực hiện các hành động khác ở đây
+        });
+    </script>
+</body>
+</html>
