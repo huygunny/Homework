@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quan ly sinh vien</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<div class="form">
+    <h3>Thông tin sinh viên</h3>
+    <label for="name">Họ và Tên</label>
+    <input type="text" id="name">
+    <span id="nameError"></span>
+    <br>
+
+    <label for="email">Địa chỉ email</label>
+    <input type="text" id="email">
+    <span id="mailError"></span>
+    <br>
+
+    <label for="phone">Số điện thoại</label>
+    <input type="text" id="phone">
+    <span id="phoneError"></span>
+    <br>
+
+    <label for="address">Địa chỉ</label>
+    <input type="text" id="address">
+    <span id="addressError"></span>
+    <br>
+
+    <label for="msv">Mã Sinh Viên</label>
+    <input type="text" id="msv">
+    <span id="msvError"></span>
+    <br>
+
+    <label>Giới tính</label>
+    <input type="radio" id="male" value="Nam" name="gender">Nam
+    <input type="radio" id="famale" value="Nữ" name="gender">Nữ
+    <span id="genderError"></span>
+    <br>
+    <label>&nbsp;</label>
+    <button onclick="button()">Lưu lại</button>
+</div>
+<div class="list" id="list">
+    <h3>Danh sách sinh viên</h3>
+    <table id="tableX" border="1">
+        <tr>
+            <td>STT</td>
+            <td>Họ Tên</td>
+            <td>Email</td>
+            <td>Điện Thoại</td>
+            <td>Địa chỉ</td>
+            <td>Mã sinh viên</td>
+            <td>Giới tính</td>
+        </tr>
+    </table>
+</div>
+<script src="./js/student.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function tinhLaiDon(soTienVay, laiSuat, soNam) {
+        var lai = soTienVay * laiSuat / 100; // tính lãi
+        var tongTien = soTienVay + lai * soNam; // tính tổng tiền sau năm
+        return tongTien;
+      }
+      
+      var soTienVay = 50; // số tiền vay (triệu đồng)
+      var laiSuat = 6.9; // lãi suất (%)
+      var soNam = 2; // số năm
+      
+      var tongTien = tinhLaiDon(soTienVay, laiSuat, soNam);
+      console.log("Số tiền phải trả sau " + soNam + " năm là: " + tongTien + " triệu đồng");
+      </script>
+</body>
+</html>
