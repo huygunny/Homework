@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tính điểm Đại học khối D</title>
+    <style>
+        .container {
+            width: 300px;
+            margin: 20px auto;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 5px 10px;
+        }
+
+        #result {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Tính điểm Đại học khối D</h2>
+        <div>
+            <label for="mathScore">Điểm Toán:</label>
+            <input type="number" id="mathScore" placeholder="Nhập điểm Toán">
+        </div>
+        <div>
+            <label for="literatureScore">Điểm Văn:</label>
+            <input type="number" id="literatureScore" placeholder="Nhập điểm Văn">
+        </div>
+        <div>
+            <label for="englishScore">Điểm Anh:</label>
+            <input type="number" id="englishScore" placeholder="Nhập điểm Anh">
+        </div>
+        <div>
+            <label for="region">Khu vực:</label>
+            <select id="region">
+                <option value="KV1">KV1</option>
+                <option value="KV2-NT">KV2-NT</option>
+                <option value="KV2">KV2</option>
+                <option value="KV3">KV3</option>
+            </select>
+        </div>
+        <button onclick="calculateScore()">Tính điểm</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculateScore() {
+            var mathScore = parseInt(document.getElementById("mathScore").value);
+            var literatureScore = parseInt(document.getElementById("literatureScore").value);
+            var englishScore = parseInt(document.getElementById("englishScore").value);
+            var region = document.getElementById("region").value;
+            var totalScore = mathScore + literatureScore + englishScore;
+
+            switch (region) {
+                case "KV1":
+                    totalScore += 0.75;
+                    break;
+                case "KV2-NT":
+                    totalScore += 0.5;
+                    break;
+                case "KV2":
+                    totalScore += 0.25;
+                    break;
+                case "KV3":
+                    // No additional score for KV3
+                    break;
+            }
+
+            document.getElementById("result").innerHTML = "Tổng điểm: " + totalScore.toFixed(2);
+        }
+    </script>
+</body>
+</html>
