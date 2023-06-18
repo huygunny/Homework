@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tra cứu giá hoa quả</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Tra cứu giá hoa quả</h2>
+        <div>
+            <label for="fruitName">Nhập tên hoa quả:</label>
+            <input type="text" id="fruitName" placeholder="Nhập tên hoa quả">
+            <button onclick="showPrice()">Xem giá</button>
+        </div>
+        <div id="result"></div>
+    </div>
+
+    
+
+    <script>
+
+function showPrice() {
+    var fruitName = document.getElementById("fruitName").value;
+    var price = 0;
+
+    switch (fruitName) {
+        case "Ổi":
+        case "Dưa Hấu":
+            price = 20000;
+            break;
+        case "Táo":
+        case "Xoài":
+            price = 30000;
+            break;
+        case "Cam":
+        case "Chôm Chôm":
+            price = 40000;
+            break;
+        case "Măng Cụt":
+            price = 50000;
+            break;
+    }
+
+    if (price > 0) {
+        document.getElementById("result").innerHTML = "Giá của " + fruitName + " là " + price + " VNĐ/kg";
+    } else {
+        document.getElementById("result").innerHTML = "Không tìm thấy thông tin về giá của " + fruitName;
+    }
+}
+
+    </script>
+</body>
+</html>
