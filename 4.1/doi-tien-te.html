@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Chuyển đổi tiền tệ</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 300px;
+      margin: 50px auto;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    form {
+      text-align: center;
+    }
+
+    button {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Chuyển đổi tiền tệ</h1>
+    <form>
+      <label for="fromCurrency">Từ đồng tiền:</label>
+      <select id="fromCurrency">
+        <option value="VND">Việt Nam Đồng</option>
+        <option value="USD">Đô-la Mỹ</option>
+        <option value="EUR">Euro</option>
+        <option value="JPY">Yên Nhật</option>
+      </select><br>
+      <label for="toCurrency">Đến đồng tiền:</label>
+      <select id="toCurrency">
+        <option value="VND">Việt Nam Đồng</option>
+        <option value="USD">Đô-la Mỹ</option>
+        <option value="EUR">Euro</option>
+        <option value="JPY">Yên Nhật</option>
+      </select><br>
+      <label for="amount">Số tiền:</label>
+      <input type="number" id="amount" step="0.01" required><br>
+      <button type="button" onclick="convertCurrency()">Chuyển đổi</button>
+    </form>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function convertCurrency() {
+      var fromCurrency = document.getElementById("fromCurrency").value;
+      var toCurrency = document.getElementById("toCurrency").value;
+      var amount = parseFloat(document.getElementById("amount").value);
+
+      // Tỷ giá chuyển đổi (ví dụ)
+      var exchangeRate = {
+        "VND": {
+          "USD": 0.000043,
+          "EUR": 0.000038,
+          "JPY": 4.63
+        },
+        "USD": {
+          "VND": 23080,
+          "EUR": 0.89,
+          "JPY": 110.12
+        },
+        "EUR": {
+          "VND": 26260,
+          "USD": 1.12,
+          "JPY": 122.56
+        },
+        "JPY": {
+          "VND": 215.55,
+          "USD": 0.0091,
+          "EUR": 0.0082
+        }
+      };
+
+      var result = amount * exchangeRate[fromCurrency][toCurrency];
+
+      var resultElement = document.getElementById("result");
+      resultElement.innerHTML = amount + " " + fromCurrency + " = " + result.toFixed(2) + " " + toCurrency;
+    }
+  </script>
+</body>
+
+</html>
