@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercise</title>
+    <script>
+        function showMessage() {
+            alert('Xin chào!');
+        }
+
+        function showMessageHTML() {
+            document.getElementById('messageDiv').innerHTML = 'Xin chào!';
+        }
+
+        function showMessageWrite() {
+            document.write('Xin chào!');
+        }
+
+        function showMessageConsole() {
+            console.log('Xin chào!');
+        }
+    </script>
+</head>
+<body>
+    <!-- Exercise 1: Using alert() -->
+    <button type="button" onclick="showMessage();">Click Me!</button>
+
+    <!-- Exercise 2: Using HTML element -->
+    <div id="messageDiv"></div>
+    <button type="button" onclick="showMessageHTML();">Click Me!</button>
+
+    <!-- Exercise 3: Using document.write() -->
+    <button type="button" onclick="showMessageWrite();">Click Me!</button>
+
+    <!-- Exercise 4: Using console.log() -->
+    <button type="button" onclick="showMessageConsole();">Click Me!</button>
+</body>
+</html>
