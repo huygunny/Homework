@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leap Year Checker</title>
+</head>
+<body>
+    <h2>Leap Year Checker</h2>
+    <form id="yearForm">
+        <label for="yearInput">Enter a year:</label>
+        <input type="number" id="yearInput" required>
+        <button type="button" onclick="checkLeapYear()">Check</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        function checkLeapYear() {
+            var year = parseInt(document.getElementById('yearInput').value);
+            var resultElement = document.getElementById('result');
+
+            if (isNaN(year)) {
+                resultElement.textContent = 'Invalid input';
+            } else {
+                var isLeapYear = false;
+
+                var isDivisibleBy4 = year % 4 == 0;
+                if (isDivisibleBy4) {
+                    var isDivisibleBy100 = year % 100 == 0;
+                    if (isDivisibleBy100) {
+                        var isDivisibleBy400 = year % 400 == 0;
+                        if (isDivisibleBy400) {
+                            isLeapYear = true;
+                        }
+                    } else {
+                        isLeapYear = true;
+                    }
+                }
+
+                if (isLeapYear) {
+                    resultElement.textContent = year + ' is a leap year';
+                } else {
+                    resultElement.textContent = year + ' is NOT a leap year';
+                }
+            }
+        }
+    </script>
+</body>
+</html>
