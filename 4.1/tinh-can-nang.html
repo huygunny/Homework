@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Chỉ số BMI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 300px;
+      margin: 50px auto;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    form {
+      text-align: center;
+    }
+
+    input[type="number"] {
+      width: 100px;
+    }
+
+    button {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Tính chỉ số BMI</h1>
+    <form>
+      <label for="height">Chiều cao (m):</label>
+      <input type="number" id="height" step="0.01" required><br>
+      <label for="weight">Cân nặng (kg):</label>
+      <input type="number" id="weight" step="0.01" required><br>
+      <button type="button" onclick="calculateBMI()">Tính BMI</button>
+    </form>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function calculateBMI() {
+      var height = parseFloat(document.getElementById("height").value);
+      var weight = parseFloat(document.getElementById("weight").value);
+
+      var bmi = weight / (height * height);
+
+      var classification;
+
+      if (bmi < 16) {
+        classification = "Gầy độ III";
+      } else if (bmi < 17) {
+        classification = "Gầy độ II";
+      } else if (bmi < 18.5) {
+        classification = "Gầy độ I";
+      } else if (bmi < 25) {
+        classification = "Bình thường";
+      } else if (bmi < 30) {
+        classification = "Thừa cân";
+      } else if (bmi < 35) {
+        classification = "Béo phì độ I";
+      } else if (bmi < 40) {
+        classification = "Béo phì độ II";
+      } else {
+        classification = "Béo phì độ III";
+      }
+
+      var resultElement = document.getElementById("result");
+      resultElement.innerHTML = "Chỉ số BMI của bạn là: " + bmi.toFixed(2) + "<br>Phân loại: " + classification;
+    }
+  </script>
+</body>
+
+</html>
