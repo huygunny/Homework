@@ -1,24 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <title>Tính lãi suất ngân hàng</title>
+  <script>
+    function tinhLaiDon() {
+      var soTienVay = parseFloat(document.getElementById("soTienVay").value);
+      var laiSuat = parseFloat(document.getElementById("laiSuat").value);
+      var soNam = parseFloat(document.getElementById("soNam").value);
+
+      var lai = soTienVay * laiSuat / 100; // tính lãi
+      var tongTien = soTienVay + lai * soNam; // tính tổng tiền sau năm
+
+      document.getElementById("ketQua").innerHTML = "Số tiền phải trả sau " + soNam + " năm là: " + tongTien + " triệu đồng";
+    }
+  </script>
 </head>
 <body>
-    <script>
-    function tinhLaiDon(soTienVay, laiSuat, soNam) {
-        var lai = soTienVay * laiSuat / 100; // tính lãi
-        var tongTien = soTienVay + lai * soNam; // tính tổng tiền sau năm
-        return tongTien;
-      }
-      
-      var soTienVay = 50; // số tiền vay (triệu đồng)
-      var laiSuat = 6.9; // lãi suất (%)
-      var soNam = 2; // số năm
-      
-      var tongTien = tinhLaiDon(soTienVay, laiSuat, soNam);
-      console.log("Số tiền phải trả sau " + soNam + " năm là: " + tongTien + " triệu đồng");
-      </script>
+  <h1>Tính lãi suất ngân hàng</h1>
+
+  <label for="soTienVay">Số tiền vay (triệu đồng):</label>
+  <input type="number" id="soTienVay"><br>
+
+  <label for="laiSuat">Lãi suất (%):</label>
+  <input type="number" id="laiSuat"><br>
+
+  <label for="soNam">Số năm:</label>
+  <input type="number" id="soNam"><br>
+
+  <button onclick="tinhLaiDon()">Tính</button>
+
+  <div id="ketQua"></div>
 </body>
 </html>
