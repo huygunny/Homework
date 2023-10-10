@@ -14,19 +14,19 @@
 
     <script>
         function checkLeapYear() {
-            var year = parseInt(document.getElementById('yearInput').value);
-            var resultElement = document.getElementById('result');
+            let year = parseInt(document.getElementById('yearInput').value);
+            let resultElement = document.getElementById('result');
 
             if (isNaN(year)) {
                 resultElement.textContent = 'Invalid input';
             } else {
-                var isLeapYear = false;
+                let isLeapYear = false;
 
-                var isDivisibleBy4 = year % 4 == 0;
+                let isDivisibleBy4 = year % 4 == 0;
                 if (isDivisibleBy4) {
-                    var isDivisibleBy100 = year % 100 == 0;
+                    let isDivisibleBy100 = year % 100 == 0;
                     if (isDivisibleBy100) {
-                        var isDivisibleBy400 = year % 400 == 0;
+                        let isDivisibleBy400 = year % 400 == 0;
                         if (isDivisibleBy400) {
                             isLeapYear = true;
                         }

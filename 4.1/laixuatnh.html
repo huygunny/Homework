@@ -1,34 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Tính lãi suất ngân hàng</title>
-  <script>
-    function tinhLaiDon() {
-      var soTienVay = parseFloat(document.getElementById("soTienVay").value);
-      var laiSuat = parseFloat(document.getElementById("laiSuat").value);
-      var soNam = parseFloat(document.getElementById("soNam").value);
-
-      var lai = soTienVay * laiSuat / 100; // tính lãi
-      var tongTien = soTienVay + lai * soNam; // tính tổng tiền sau năm
-
-      document.getElementById("ketQua").innerHTML = "Số tiền phải trả sau " + soNam + " năm là: " + tongTien + " triệu đồng";
-    }
-  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 <body>
-  <h1>Tính lãi suất ngân hàng</h1>
+  <script>
+    var principal = parseFloat(prompt("Nhập số tiền vay:"));
+    var interestRate = parseFloat(prompt("Nhập lãi suất (%):"));
+    var years = parseInt(prompt("Nhập số năm:"));
 
-  <label for="soTienVay">Số tiền vay (triệu đồng):</label>
-  <input type="number" id="soTienVay"><br>
 
-  <label for="laiSuat">Lãi suất (%):</label>
-  <input type="number" id="laiSuat"><br>
+    var interest = (principal * interestRate * years) / 100;
 
-  <label for="soNam">Số năm:</label>
-  <input type="number" id="soNam"><br>
+    var totalAmount = principal + interest;
 
-  <button onclick="tinhLaiDon()">Tính</button>
-
-  <div id="ketQua"></div>
+    document.write("Số tiền phải trả sau " + years + " năm là: " + totalAmount.toFixed(2));
+  </script>
 </body>
 </html>
