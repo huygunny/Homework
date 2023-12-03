@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Market Research Survey</title>
+</head>
+<body>
+    <h1>Market Research Survey</h1>
+
+    <form action="submit_survey.php" method="post">
+        <h2>Age Range</h2>
+        <select name="age">
+            <option value="18-24">18-24</option>
+            <option value="25-34">25-34</option>
+            <option value="35-50">35-44</option>
+            <option value="50+">50+</option>
+        </select>
+
+        <h2>Yearly Income Range</h2>
+        <select name="income">
+            <option value="$0-$25,000">$0 - $25,000</option>
+            <option value="$25,001-$50,000">$25,001 - $50,000</option>
+            <option value="$50,001-$100,000">$50,001 - $100,000</option>
+           
+            <option value="$100,000 +"> $100,000 +</option>
+        </select>
+
+        <h2>Gender Identity</h2>
+        <input type="radio" name="gender" value="Male"> Male<br>
+        <input type="radio" name="gender" value="Female"> Female<br>
+        <input type="radio" name="gender" value="Nonbinary"> Nonbinary<br>
+        <input type="radio" name="gender" value="Other"> Other (Please specify): <input type="text" name="other_gender"><br>
+
+        <h2>Products Purchased (Check all that apply)</h2>
+        <input type="checkbox" name="products" value="Product 1"> Product 1<br>
+        <input type="checkbox" name="products" value="Product 2"> Product 2<br>
+        <input type="checkbox" name="products" value="Product 3"> Product 3<br>
+
+        <h2>How often would you use our new product?</h2>
+        <input type="radio" name="usage" value="Daily"> Daily<br>
+        <input type="radio" name="usage" value="Weekly"> Weekly<br>
+        <input type="radio" name="usage" value="Monthly"> Monthly<br>
+
+        <h2>What would you pay for the new product?</h2>
+        $ <input type="number" name="price_dollars" min="0"><br>
+        Cents <input type="number" name="price_cents" min="0" max="99"><br>
+
+        <h2>Features or Improvements (Please provide your suggestions or comments)</h2>
+        <textarea name="features" rows="4" cols="50"></textarea>
+
+        <br><br>
+
+        
+    </form>
+</body>
+</html>
